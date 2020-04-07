@@ -318,8 +318,8 @@ def gcum(x):
     """Evaluate the standard normal cdf given a normal deviate `x`. `gcum` is
     the area under a unit normal curve to the left of `x`. The results are
     accurate only to about 5 decimal places.
-    :param x: TODO
-    :return: TODO
+    :param x: normal deviate
+    :return: area under a unit normal curve to the left of x
     """
     z = x
     if z < 0:
@@ -394,7 +394,7 @@ def setup_rotmat(c0, nst, it, cc, ang, pmx):
     """Setup rotation matrix.
     :param c0: nugget constant (isotropic)
     :param nst: number of nested structures (max. 4)
-    :param it: TODO
+    :param it: Variogram shapes (i.e., Gaussian, Exponential, Spherical) of each nested structure
     :param cc: multiplicative factor of each nested structure
     :param ang: TODO
     :param pmx: TODO
@@ -433,7 +433,7 @@ def cova2(x1, y1, x2, y2, nst, c0, pmx, cc, aa, it, ang, anis, rotmat, maxcov):
     :param pmx: TODO
     :param cc: multiplicative factor of each nested structure
     :param aa: parameter `a` of each nested structure
-    :param it: TODO
+    :param it: Variogram shapes (i.e., Gaussian, Exponential, Spherical) of each nested structure
     :param ang: TODO: not used
     :param anis: TODO
     :param rotmat: rotation matrices
@@ -495,7 +495,7 @@ def sqdist2(x1,y1,x2,y2,ist,rotmat,anis):
     :param ist: structure index 
     :param rotmat: 2d rotation matrix 
     :param anis: 2D anisotropy ratio
-    :return: TODO
+    :return: squared distance of dx1 and dy1
     """    
     
 # Compute component distance vectors and the squared distance:
@@ -1670,7 +1670,7 @@ def gam(array, tmin, tmax, xsiz, ysiz, ixd, iyd, nlag, isill):
     :param iyd: lag offset in grid cells
     :param nlag: number of lags to calculate
     :param isill: 1 for standardize sill
-    :return: TODO
+    :return: returns variogram calculation of gridded data
     """
     if array.ndim == 2:
         ny, nx = array.shape
@@ -1777,7 +1777,7 @@ def gamv(
     :param bandwh: horizontal bandwidth / maximum distance offset orthogonal to
                    azimuth
     :param isill: 1 for standardize sill
-    :return: TODO
+    :return: variogram calculation with scattered data
     """
     # Load the data
     # Trim values outside tmin and tmax
@@ -4428,7 +4428,7 @@ def cova3(x1, y1, z1, x2, y2, z2, nst, c0, pmx, cc, aa, it, anis, anis_v, rotmat
     :param pmx: TODO
     :param cc: multiplicative factor of each nested structure
     :param aa: parameter `a` of each nested structure
-    :param it: TODO
+    :param it: Variogram shapes (i.e., Gaussian, Exponential, Spherical) of each nested structure
     :param ang: TODO: not used
     :param anis: Horizontal aspect ratio
 	:param anis_v: Vertical aspect ratio

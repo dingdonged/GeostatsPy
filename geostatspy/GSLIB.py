@@ -68,7 +68,7 @@ def GSLIB2ndarray(data_file, kcol, nx, ny):
     Python methods
 
     :param data_file: file name
-    :param kcol: TODO
+    :param kcol: name of column which contains property
     :param nx: shape along x dimension
     :param ny: shape along y dimension
     :return: ndarray, column name
@@ -248,7 +248,7 @@ def locmap(
     :param title: title
     :param xlabel: label for x axis
     :param ylabel: label for y axis
-    :param vlabel: TODO
+    :param vlabel: label for color, sequence, or sequence of color
     :param cmap: colormap
     :param fig_name: figure name
     :return: PathCollection
@@ -316,7 +316,7 @@ def locmap_st(
     :param title: title
     :param xlabel: label for x axis
     :param ylabel: label for y axis
-    :param vlabel: TODO
+    :param vlabel: label for color, sequence, or sequence of color
     :param cmap: colormap
     :return: PathCollection
     """
@@ -372,12 +372,12 @@ def pixelplt(
     :param ymin: y axis minimum
     :param ymax: y axis maximum
     :param step: step
-    :param vmin: TODO
-    :param vmax: TODO
+    :param vmin: normalize luminance data
+    :param vmax: normalize luminance data
     :param title: title
     :param xlabel: label for x axis
     :param ylabel: label for y axis
-    :param vlabel: TODO
+    :param vlabel: label for color, sequence, or sequence of color
     :param cmap: colormap
     :param fig_name: figure name
     :return: QuadContourSet
@@ -431,12 +431,12 @@ def pixelplt_st(
     :param ymin: y axis minimum
     :param ymax: y axis maximum
     :param step: step
-    :param vmin: TODO
-    :param vmax: TODO
+    :param vmin: normalize luminance data minimum
+    :param vmax: normalize luminance data maximum
     :param title: title
     :param xlabel: label for x axis
     :param ylabel: label for y axis
-    :param vlabel: TODO
+    :param vlabel: label for color, sequence, or sequence of color
     :param cmap: colormap
     :return: QuadContourSet
     """
@@ -506,12 +506,12 @@ def pixelplt_log_st(
     :param ymin: y axis minimum
     :param ymax: y axis maximum
     :param step: step
-    :param vmin: TODO
-    :param vmax: TODO
+    :param vmin: normalize luminance data minimum
+    :param vmax: normalize luminance data maximum
     :param title: title
     :param xlabel: label for x axis
     :param ylabel: label for y axis
-    :param vlabel: TODO
+    :param vlabel: label for color, sequence, or sequence of color
     :param cmap: colormap
     :return: QuadContourSet
     """
@@ -589,8 +589,8 @@ def locpix(
     :param ymin: y axis minimum
     :param ymax: y axis maximum
     :param step: step
-    :param vmin: TODO
-    :param vmax: TODO
+    :param vmin: normalize luminance data minimum
+    :param vmax: normalize luminance data maximum
     :param df: dataframe
     :param xcol: data for x axis
     :param ycol: data for y axis
@@ -598,7 +598,7 @@ def locpix(
     :param title: title
     :param xlabel: label for x axis
     :param ylabel: label for y axis
-    :param vlabel: TODO
+    :param vlabel: label for color, sequence, or sequence of color
     :param cmap: colormap
     :param fig_name: figure name
     :return: QuadContourSet
@@ -671,8 +671,8 @@ def locpix_st(
     :param ymin: y axis minimum
     :param ymax: y axis maximum
     :param step: step
-    :param vmin: TODO
-    :param vmax: TODO
+    :param vmin: normalize luminance data minimum
+    :param vmax: normalize luminance data maximum
     :param df: dataframe
     :param xcol: data for x axis
     :param ycol: data for y axis
@@ -680,7 +680,7 @@ def locpix_st(
     :param title: title
     :param xlabel: label for x axis
     :param ylabel: label for y axis
-    :param vlabel: TODO
+    :param vlabel: label for color, sequence, or sequence of color
     :param cmap: colormap
     :return: QuadContourSet
     """
@@ -749,8 +749,8 @@ def locpix_log_st(
     :param ymin: y axis minimum
     :param ymax: y axis maximum
     :param step: step
-    :param vmin: TODO
-    :param vmax: TODO
+    :param vmin: normalize luminance data minimum
+    :param vmax: normalize luminance data maximum
     :param df: dataframe
     :param xcol: data for x axis
     :param ycol: data for y axis
@@ -758,7 +758,7 @@ def locpix_log_st(
     :param title: title
     :param xlabel: label for x axis
     :param ylabel: label for y axis
-    :param vlabel: TODO
+    :param vlabel: label for color, sequence, or sequence of color
     :param cmap: colormap
     :return: QuadContourSet
     """
@@ -928,12 +928,12 @@ def gamv_2d(df, xcol, ycol, vcol, nlag, lagdist, azi, atol, bstand):
     be available in PATH or working directory).
 
     :param df: dataframe
-    :param xcol: TODO
-    :param ycol: TODO
-    :param vcol: TODO
-    :param nlag: TODO
+    :param xcol: data for x axis
+    :param ycol: data for y axis
+    :param vcol: color, sequence, or sequence of color
+    :param nlag: number of lags
     :param lagdist: TODO
-    :param azi: TODO
+    :param azi: azimuth
     :param atol: TODO
     :param bstand: TODO
     :return: TODO
@@ -982,13 +982,13 @@ def gamv_3d(df, xcol, ycol, zcol, vcol, nlag, lagdist,lag_tol, azi, atol, bandh,
     be available in PATH or working directory).
 
     :param df: dataframe
-    :param xcol: TODO
-    :param ycol: TODO
-    :param zcol: TODO
-    :param vcol: TODO
-    :param nlag: TODO
+    :param xcol: data for x axis
+    :param ycol: data for y axis
+    :param zcol: data for z axis
+    :param vcol: color, sequence, or sequence of color
+    :param nlag: number of lags
     :param lagdist: TODO
-    :param azi: TODO
+    :param azi: azimuth
     :param atol: TODO
     :param bstand: TODO
     :return: TODO
@@ -1052,17 +1052,17 @@ def varmapv_2d(
     available in PATH or working directory).
 
     :param df: dataframe
-    :param xcol: TODO
-    :param ycol: TODO
-    :param vcol: TODO
-    :param nx: TODO
-    :param ny: TODO
+    :param xcol: data for x axis
+    :param ycol: data for y axis
+    :param vcol: color, sequence, or sequence of color
+    :param nx: shape along x dimension
+    :param ny: shape along y dimension
     :param lagdist: TODO
     :param minpairs: TODO
-    :param vmax: TODO
+    :param vmax: normalize luminance data maximum
     :param bstand: TODO
-    :param title: TODO
-    :param vlabel: TODO
+    :param title: title
+    :param vlabel: label for color, sequence, or sequence of color
     :param cmap: colormap
     :param fig_name: figure name
     :return: TODO
@@ -1139,16 +1139,16 @@ def varmap(
     available in PATH or working directory).
 
     :param array: ndarray
-    :param nx: TODO
-    :param ny: TODO
+    :param nx: shape along x dimension
+    :param ny: shape along y dimension
     :param hsiz: TODO
     :param nlagx: TODO
     :param nlagy: TODO
     :param minpairs: TODO
-    :param vmax: TODO
+    :param vmax: normalize luminance data maximum
     :param bstand: TODO
     :param title: title
-    :param vlabel: TODO
+    :param vlabel: label for color, sequence, or sequence of color
     :param cmap: colormap
     :param fig_name: figure name
     :return: TODO
@@ -1223,19 +1223,19 @@ def vmodel(
     """Variogram model, 2D wrapper for vmodel from GSLIB (.exe must be
     available in PATH or working directory).
 
-    :param nlag: TODO
-    :param step: TODO
-    :param azi: TODO
-    :param nug: TODO
-    :param nst: TODO
+    :param nlag: number of lags
+    :param step: lag distance
+    :param azi: azimuth
+    :param nug: nugget constant
+    :param nst: the number of semivariogram structures
     :param tstr1: TODO
     :param c1: TODO
-    :param azi1: TODO
+    :param azi1: Azimuth of 1st variogram
     :param rmaj1: TODO
     :param rmin1: TODO
     :param tstr2: TODO
     :param c2: TODO
-    :param azi2: TODO
+    :param azi2: Azimuth of 2nd variogram
     :param rmaj2: TODO
     :param rmin2: TODO
     :return: TODO
@@ -1276,13 +1276,13 @@ def declus(df, xcol, ycol, vcol, cmin, cmax, cnum, bmin):
     available in PATH or working directory).
 
     :param df: dataframe
-    :param xcol: TODO
-    :param ycol: TODO
-    :param vcol: TODO
-    :param cmin: TODO
-    :param cmax: TODO
-    :param cnum: TODO
-    :param bmin: TODO
+    :param xcol: data for x axis
+    :param ycol: data for y axis
+    :param vcol: color, sequence, or sequence of color
+    :param cmin: minimum cell size
+    :param cmax: maximum cell size
+    :param cnum: number of cell sizes
+    :param bmin: minimum declustered mean
     :return: TODO
     """
     nrow = len(df)
@@ -1329,11 +1329,11 @@ def sgsim_uncond(nreal, nx, ny, hsiz, seed, var, output_file):
     """Sequential Gaussian simulation, 2D unconditional wrapper for sgsim from
     GSLIB (.exe must be available in PATH or working directory).
 
-    :param nreal: TODO
-    :param nx: TODO
-    :param ny: TODO
+    :param nreal: Number of realizations
+    :param nx: shape along x dimension
+    :param ny: shape along y dimension
     :param hsiz: TODO
-    :param seed: TODO
+    :param seed: random number seed
     :param var: TODO
     :param output_file: output file
     :return: TODO
@@ -1405,11 +1405,11 @@ def kb2d(df, xcol, ycol, vcol, nx, ny, hsiz, var, output_file):
     available in PATH or working directory).
 
     :param df: dataframe
-    :param xcol: TODO
-    :param ycol: TODO
-    :param vcol: TODO
-    :param nx: TODO
-    :param ny: TODO
+    :param xcol: data for x axis
+    :param ycol: data for y axis
+    :param vcol: color, sequence, or sequence of color
+    :param nx: shape along x dimension
+    :param ny: shape along y dimension
     :param hsiz: TODO
     :param var: TODO
     :param output_file: output file
@@ -1464,15 +1464,15 @@ def sgsim(nreal, df, xcol, ycol, vcol, nx, ny, hsiz, seed, var, output_file):
     """Sequential Gaussian simulation, 2D wrapper for sgsim from GSLIB (.exe
     must be available in PATH or working directory).
 
-    :param nreal: TODO
+    :param nreal: Number of realizations
     :param df: dataframe
-    :param xcol: TODO
-    :param ycol: TODO
-    :param vcol: TODO
-    :param nx: TODO
-    :param ny: TODO
+    :param xcol: data for x axis
+    :param ycol: data for y axis
+    :param vcol: color, sequence, or sequence of color
+    :param nx: shape along x dimension
+    :param ny: shape along y dimension
     :param hsiz: TODO
-    :param seed: TODO
+    :param seed: random number seed
     :param var: TODO
     :param output_file: output file
     :return: TODO
@@ -1551,11 +1551,11 @@ def cosgsim_uncond(nreal, nx, ny, hsiz, seed, var, sec, correl, output_file):
     """Sequential Gaussian simulation, 2D unconditional wrapper for sgsim from
     GSLIB (.exe must be available in PATH or working directory).
 
-    :param nreal: TODO
-    :param nx: TODO
-    :param ny: TODO
+    :param nreal: Number of realizations
+    :param nx: shape along x dimension
+    :param ny: shape along y dimension
     :param hsiz: TODO
-    :param seed: TODO
+    :param seed: random number seed
     :param var: TODO
     :param sec: TODO
     :param correl: TODO
@@ -1631,13 +1631,13 @@ def sample(array, xmin, ymin, step, name, df, xcol, ycol):
     """Sample 2D model with provided X and Y and append to DataFrame.
 
     :param array: ndarray
-    :param xmin: TODO
-    :param ymin: TODO
-    :param step: TODO
+    :param xmin: x axis minimum
+    :param ymin: y axis minimum
+    :param step: step
     :param name: TODO
     :param df: dataframe
-    :param xcol: TODO
-    :param ycol: TODO
+    :param xcol: data for x axis
+    :param ycol: data for y axis
     :return: dataframe
     """
     if array.ndim != 2:
@@ -1671,15 +1671,15 @@ def regular_sample(array, xmin, xmax, ymin, ymax, step, mx, my, nx, ny, name):
     """Extract regular spaced samples from a 2D spatial model.
 
     :param array: ndarray
-    :param xmin: TODO
-    :param xmax: TODO
-    :param ymin: TODO
-    :param ymax: TODO
-    :param step: TODO
+    :param xmin: x axis minimum
+    :param xmax: x axis maximum
+    :param ymin: y axis minimum
+    :param ymax: y axis maximum
+    :param step: step
     :param mx: TODO
     :param my: TODO
-    :param nx: TODO
-    :param ny: TODO
+    :param nx: shape along x dimension
+    :param ny: shape along y dimension
     :param name: TODO
     :return: dataframe
     """
@@ -1711,11 +1711,11 @@ def random_sample(array, xmin, xmax, ymin, ymax, step, nsamp, name):
     """Extract random samples from a 2D spatial model.
 
     :param array: ndarray
-    :param xmin: TODO
-    :param xmax: TODO
-    :param ymin: TODO
-    :param ymax: TODO
-    :param step: TODO
+    :param xmin: x axis minimum
+    :param xmax: x axis maximum
+    :param ymin: y axis minimum
+    :param ymax: y axis maximum
+    :param step: step
     :param nsamp: TODO
     :param name: TODO
     :return: dataframe
@@ -1745,14 +1745,14 @@ def DataFrame2ndarray(df, xcol, ycol, vcol, xmin, xmax, ymin, ymax, step):
     no data in cell).
 
     :param df: dataframe
-    :param xcol: TODO
-    :param ycol: TODO
-    :param vcol: TODO
-    :param xmin: TODO
-    :param xmax: TODO
-    :param ymin: TODO
-    :param ymax: TODO
-    :param step: TODO
+    :param xcol: data for x axis
+    :param ycol: data for y axis
+    :param vcol: color, sequence, or sequence of color
+    :param xmin: x axis minimum
+    :param xmax: x axis maximum
+    :param ymin: y axis minimum
+    :param ymax: y axis maximum
+    :param step: step
     :return: ndarray
     """
     xx, yy = np.meshgrid(
@@ -1861,15 +1861,15 @@ def sgsim_3D(nreal, df, xcol, ycol, zcol, vcol, nx, ny, nz, hsiz, vsiz, seed, va
     """Sequential Gaussian simulation, 2D wrapper for sgsim from GSLIB (.exe
     must be available in PATH or working directory).
 
-    :param nreal: TODO
+    :param nreal: Number of realizations
     :param df: dataframe
-    :param xcol: TODO
-    :param ycol: TODO
-    :param vcol: TODO
-    :param nx: TODO
-    :param ny: TODO
+    :param xcol: data for x axis
+    :param ycol: data for y axis
+    :param vcol: color, sequence, or sequence of color
+    :param nx: shape along x dimension
+    :param ny: shape along y dimension
     :param hsiz: TODO
-    :param seed: TODO
+    :param seed: random number seed
     :param var: TODO
     :param output_file: output file
     :return: TODO
